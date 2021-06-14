@@ -50,9 +50,7 @@ class ClientHandler(socketserver.BaseRequestHandler):
             continue
         self.sendstrCipher(sfd, lines)
       except OSError as err:
-        self.sendstrCipher(sfd, "Erreur de fichier '{}': [Errno {}] {}".format(fileName, err.errno, err.strerror))
-        linescount = -1
-        
+        self.sendstrCipher(sfd, "Erreur de fichier '{}': [Errno {}] {}".format(fileName, err.errno, err.strerror))        
 
     print("Client %s déconnecté" % self.client_address[0])
 
